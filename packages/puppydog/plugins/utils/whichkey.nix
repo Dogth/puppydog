@@ -8,6 +8,10 @@
           __unkeyed = "b";
           group = "Buffers";
         }
+        {
+          __unkeyed = "u";
+          group = "Utils";
+        }
       ];
     };
   };
