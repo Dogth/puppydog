@@ -12,7 +12,7 @@
         val = text;
         opts = {
           position = "center";
-          hl = "Keyword";
+          hl = "Type";
         };
       };
       mkButton = title: key: action: cmdKey: cmdAction: {
@@ -28,7 +28,7 @@
           width = 48;
           position = "center";
           align_shortcut = "right";
-          hl_shortcut = "Keyword";
+          hl_shortcut = "Shortcut";
           keymap = [
             "n"
             cmdKey
