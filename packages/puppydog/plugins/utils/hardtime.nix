@@ -6,7 +6,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>uH";
+      key = "<leader>uh";
       action = "<cmd>Hardtime toggle<CMD>";
       options = {
         desc = "Toggle Hardtime";
