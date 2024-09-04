@@ -5,8 +5,12 @@
     settings = {
       spec = [
         {
-          __unkeyed = "b";
+          __unkeyed = "<leader>b";
           group = "Buffers";
+        }
+        {
+          __unkeyed = "<leader>u";
+          group = "Utils";
         }
       ];
     };
