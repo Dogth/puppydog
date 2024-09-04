@@ -3,8 +3,34 @@
 A simple nixvim configuration.
 
 ### Plugins
-
-#### LSP
+ - cmp
+ - conform
+ - fidget
+ - lsp
+ - neotest
+ - nvim-jdtls
+ - refactor
+ - trouble
+ - undotree
+ - treesitter
+ - alpha
+ - lualine
+ - neotree
+ - autopairs
+ - codeium-nvim
+ - colorizer
+ - hardtime
+ - lazygit
+ - devenv
+ - direnv
+ - nix-develop
+ - nvim-ufo
+ - precognition
+ - telescope
+ - todo-comments
+ - toggleterm
+ - which-key
+ - yazi
 
 ### Installation
 
