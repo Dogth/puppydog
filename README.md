@@ -34,7 +34,7 @@ A simple nixvim configuration.
 
 ### Installation
 
-To run this configuration in ephemeral shell run:
+To run this configuration in ephemeral shell:
 
 ```bash
     nix run github:dogth/puppydog
