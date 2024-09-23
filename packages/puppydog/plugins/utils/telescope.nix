@@ -20,7 +20,7 @@
           };
         };
         frecency = {
-          enable = true;
+          enable = false;
         };
       };
 
@@ -111,15 +111,6 @@
       '';
       options = {
         desc = "Find word in open files";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>fR";
-      action = "<cmd>Telescope frecency<CR>";
-      options = {
-        desc = "Find recent files";
         silent = true;
       };
     }
