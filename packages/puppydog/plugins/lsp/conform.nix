@@ -22,6 +22,9 @@
         nix = ["nixpkgs"];
         lua = ["stylua"];
         markdown = ["prettierd"];
+        cmake = ["cmake-format"];
+        cpp = ["clang-format"];
+        c = ["clang-format"];
         sh = [
           "shellcheck"
           "shellharden"
@@ -38,27 +41,15 @@
       };
 
       formatters = {
-        prettierd = {
-          command = lib.getExe pkgs.prettierd;
-        };
-        stylua = {
-          command = lib.getExe pkgs.stylua;
-        };
-        shellcheck = {
-          command = lib.getExe pkgs.shellcheck;
-        };
-        shellharden = {
-          command = lib.getExe pkgs.shellharden;
-        };
-        shfmt = {
-          command = lib.getExe pkgs.shfmt;
-        };
-        xmlformat = {
-          command = lib.getExe pkgs.xmlformat;
-        };
-        nixfmt = {
-          command = lib.getExe pkgs.nixfmt-rfc-style;
-        };
+        prettierd.command = lib.getExe pkgs.prettierd;
+        stylua.command = lib.getExe pkgs.stylua;
+        shellcheck.command = lib.getExe pkgs.shellcheck;
+        shellharden.command = lib.getExe pkgs.shellharden;
+        shfmt.command = lib.getExe pkgs.shfmt;
+        xmlformat.command = lib.getExe pkgs.xmlformat;
+        nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
+        google-java-format = lib.getExe pkgs.google-java-format;
+        cmake-format = lib.getExe pkgs.cmake-format;
       };
     };
   };
