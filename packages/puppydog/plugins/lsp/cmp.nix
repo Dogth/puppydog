@@ -14,45 +14,40 @@
         sources = [
           {
             name = "nvim_lsp";
-            priority = 100;
+            priority = 1000;
           }
           {
             name = "path";
-            priority = 100;
+            priority = 1000;
           }
           {
             name = "nvim_lsp_signature_help";
-            priority = 100;
+            priority = 1000;
           }
           {
             name = "nvim_lsp_document_symbol";
-            priority = 100;
+            priority = 1000;
           }
           {
             name = "cmdline";
-            priority = 50;
+            priority = 500;
           }
           {
             name = "codeium";
-            priority = 30;
+            priority = 300;
           }
           {
             name = "treesitter";
-            priority = 85;
+            priority = 850;
           }
           {
             name = "buffer";
-            priority = 50;
+            priority = 500;
           }
         ];
 
         formatting = {
           fields = ["kind" "abbr" "menu"];
-        };
-
-        window = {
-          completion.__raw = ''cmp.config.window.bordered'';
-          documentation.__raw = ''cmp.config.window.bordered'';
         };
 
         mapping = {
