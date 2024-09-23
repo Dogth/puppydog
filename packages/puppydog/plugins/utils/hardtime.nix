@@ -7,7 +7,7 @@
     {
       mode = "n";
       key = "<leader>uh";
-      action = "<cmd>Hardtime toggle<CMD>";
+      action = "<cmd>Hardtime toggle<CR>";
       options = {
         desc = "Toggle Hardtime";
         silent = true;
