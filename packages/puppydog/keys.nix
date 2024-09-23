@@ -13,9 +13,6 @@
         "<Space>" = {
           action = "<NOP>";
         };
-        "<esc>" = {
-          action = "<cmd>nog<CR>";
-        };
         "<C-j>" = {
           action = "<cmd>resize +3<CR>";
         };

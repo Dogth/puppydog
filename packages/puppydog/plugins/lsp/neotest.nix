@@ -1,9 +1,12 @@
-{pkgs, ...}: {
+{
   plugins = {
     neotest = {
       enable = true;
       adapters = {
         java = {
+          enable = true;
+        };
+        gtest = {
           enable = true;
         };
       };

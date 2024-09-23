@@ -5,6 +5,9 @@
     closeIfLastWindow = true;
     popupBorderStyle = "solid";
     enableGitStatus = true;
+    window = {
+      position = "right";
+    };
   };
 
   keymaps = [
