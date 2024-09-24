@@ -1,2 +1,3 @@
 .direnv
 .stylua.toml
+.pre-commit-config.yaml
