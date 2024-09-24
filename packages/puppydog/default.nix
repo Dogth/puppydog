@@ -4,13 +4,14 @@
   system,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (inputs) nixvim;
 in
-  nixvim.legacyPackages.${system}.makeNixvimWithModule {
-    inherit pkgs;
+nixvim.legacyPackages.${system}.makeNixvimWithModule {
+  inherit pkgs;
 
-    module = {
-      imports = lib.snowfall.fs.get-non-default-nix-files-recursive ./.;
-    };
-  }
+  module = {
+    imports = lib.snowfall.fs.get-non-default-nix-files-recursive ./.;
+  };
+}

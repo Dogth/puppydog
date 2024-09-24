@@ -15,36 +15,26 @@
         };
         lua-ls = {
           enable = true;
-          filetypes = [
-            "lua"
-          ];
+          filetypes = [ "lua" ];
         };
         jsonls = {
           enable = true;
-          filetypes = [
-            "json"
-          ];
+          filetypes = [ "json" ];
         };
         marksman = {
           enable = true;
-          filetypes = [
-            "md"
-          ];
+          filetypes = [ "md" ];
         };
         nil-ls = {
           enable = true;
           settings = {
             nix.flake.autoArchive = true;
           };
-          filetypes = [
-            "nix"
-          ];
+          filetypes = [ "nix" ];
         };
         jdt-language-server = {
           enable = true;
-          filetypes = [
-            "java"
-          ];
+          filetypes = [ "java" ];
         };
       };
 

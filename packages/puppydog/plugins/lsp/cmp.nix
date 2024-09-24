@@ -47,7 +47,11 @@
         ];
 
         formatting = {
-          fields = ["kind" "abbr" "menu"];
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
         };
 
         mapping = {

@@ -1,8 +1,5 @@
+{ lib, pkgs, ... }:
 {
-  lib,
-  pkgs,
-  ...
-}: {
   plugins.conform-nvim = {
     enable = true;
     settings = {
@@ -14,28 +11,25 @@
       };
 
       formatters_by_ft = {
-        java = ["google-java-format"];
-        nix = ["nixfmt"];
-        lua = ["stylua"];
-        markdown = ["prettierd"];
-        cmake = ["cmake-format"];
-        cpp = ["clang-format"];
-        c = ["clang-format"];
+        java = [ "google-java-format" ];
+        nix = [ "nixfmt" ];
+        lua = [ "stylua" ];
+        markdown = [ "prettierd" ];
+        cmake = [ "cmake-format" ];
+        cpp = [ "clang-format" ];
+        c = [ "clang-format" ];
         sh = [
           "shellcheck"
           "shellharden"
           "shfmt"
         ];
-        xml = [
-          "xmlformat"
-        ];
+        xml = [ "xmlformat" ];
         "_" = [
           "trim_newlines"
           "trim_whitespaces"
         ];
       };
-      
-      
+
       formatters = {
         prettierd = {
           command = lib.getExe pkgs.prettierd;

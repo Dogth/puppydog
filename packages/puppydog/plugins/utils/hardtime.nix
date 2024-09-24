@@ -1,8 +1,11 @@
 {
   plugins.hardtime = {
     enable = true;
-    restrictionMode = "hint";
+    settings = {
+      restriction_mode = "hint";
+    };
   };
+
   keymaps = [
     {
       mode = "n";

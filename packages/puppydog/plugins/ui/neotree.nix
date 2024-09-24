@@ -1,7 +1,11 @@
 {
   plugins.neo-tree = {
     enable = true;
-    sources = ["filesystem" "buffers" "git_status"];
+    sources = [
+      "filesystem"
+      "buffers"
+      "git_status"
+    ];
     closeIfLastWindow = true;
     popupBorderStyle = "solid";
     enableGitStatus = true;
