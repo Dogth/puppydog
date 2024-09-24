@@ -8,18 +8,14 @@
     settings = {
       notify_on_error = true;
 
-      format_on_save = ''
-        function(bufnr)
-          if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-            return
-          end
-          return { timeout_ms = 500, lsp_fallback = true }
-        end
-      '';
+      format_on_save = {
+        lsp_format = "fallback";
+        quiet = true;
+      };
 
       formatters_by_ft = {
         java = ["google-java-format"];
-        nix = ["nixpkgs"];
+        nix = ["nixfmt"];
         lua = ["stylua"];
         markdown = ["prettierd"];
         cmake = ["cmake-format"];
@@ -32,24 +28,45 @@
         ];
         xml = [
           "xmlformat"
-          "xmllint"
         ];
         "_" = [
           "trim_newlines"
           "trim_whitespaces"
         ];
       };
-
+      
+      
       formatters = {
-        prettierd.command = lib.getExe pkgs.prettierd;
-        stylua.command = lib.getExe pkgs.stylua;
-        shellcheck.command = lib.getExe pkgs.shellcheck;
-        shellharden.command = lib.getExe pkgs.shellharden;
-        shfmt.command = lib.getExe pkgs.shfmt;
-        xmlformat.command = lib.getExe pkgs.xmlformat;
-        nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
-        google-java-format = lib.getExe pkgs.google-java-format;
-        cmake-format = lib.getExe pkgs.cmake-format;
+        prettierd = {
+          command = lib.getExe pkgs.prettierd;
+        };
+        stylua = {
+          command = lib.getExe pkgs.stylua;
+        };
+        shellcheck = {
+          command = lib.getExe pkgs.shellcheck;
+        };
+        shellharden = {
+          command = lib.getExe pkgs.shellharden;
+        };
+        shfmt = {
+          command = lib.getExe pkgs.shfmt;
+        };
+        xmlformat = {
+          command = lib.getExe pkgs.xmlformat;
+        };
+        nixfmt = {
+          command = lib.getExe pkgs.nixfmt-rfc-style;
+        };
+        google-java-format = {
+          command = lib.getExe pkgs.google-java-format;
+        };
+        cmake-format = {
+          command = lib.getExe pkgs.cmake-format;
+        };
+        clang-format = {
+          command = lib.getExe pkgs.libclang;
+        };
       };
     };
   };
