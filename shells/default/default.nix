@@ -4,18 +4,19 @@
   pkgs,
   system,
   ...
-}: let
+}:
+let
   inherit (inputs) snowfall-flake;
 in
-  mkShell {
-    packages = with pkgs; [
-      snowfall-flake.packages.${system}.flake
-      nix-inspect
-      inputs.self.checks.${system}.pre-commit.enabledPackages
-    ];
+mkShell {
+  packages = with pkgs; [
+    snowfall-flake.packages.${system}.flake
+    nix-inspect
+    inputs.self.checks.${system}.pre-commit.enabledPackages
+  ];
 
-    shellHook = ''
-      $(inputs.self.checks.${system}.pre-commit.shellHook)
-      echo Woof! :3
-    '';
-  }
+  shellHook = ''
+    ${inputs.self.checks.${system}.pre-commit.shellHook}
+    echo Woof! :3
+  '';
+}

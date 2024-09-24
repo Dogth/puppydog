@@ -18,7 +18,8 @@
     };
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
       src = ./.;
@@ -36,6 +37,6 @@
       };
 
       channels-config.allowUnfree = true;
-      outputs-builder = channels: {formatter = channels.nixpkgs.nixfmt-rfc-style;};
+      outputs-builder = channels: { formatter = channels.nixpkgs.nixfmt-rfc-style; };
     };
 }
