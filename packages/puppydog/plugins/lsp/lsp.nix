@@ -36,10 +36,6 @@
           enable = true;
           filetypes = [ "java" ];
         };
-        sqls = {
-          enable = true;
-          filetypes = [ "sql" ];
-        };
       };
 
       keymaps = {

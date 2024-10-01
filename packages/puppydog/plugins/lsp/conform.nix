@@ -18,7 +18,6 @@
         cmake = [ "cmake-format" ];
         cpp = [ "clang-format" ];
         c = [ "clang-format" ];
-        sql = [ "sqlfluff" ];
         sh = [
           "shellcheck"
           "shellharden"
@@ -49,9 +48,6 @@
         };
         xmlformat = {
           command = lib.getExe pkgs.xmlformat;
-        };
-        sqlfluff = {
-          command = lib.getExe pkgs.sqlfluff;
         };
         nixfmt = {
           command = lib.getExe pkgs.nixfmt-rfc-style;
