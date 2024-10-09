@@ -4,28 +4,6 @@
       enable = true;
       settings = {
         auto_close = true;
-
-        modes = {
-          preview_split = {
-            mode = "diagnostics";
-            preview = {
-              type = "split";
-              relative = "win";
-              position = "center";
-              size = 0.5;
-            };
-          };
-
-          preview_float = {
-            mode = "diagnostics";
-            preview = {
-              type = "float";
-              relative = "editor";
-              title = "Preview";
-              title_pos = "center";
-            };
-          };
-        };
       };
     };
 
