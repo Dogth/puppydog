@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   extraConfigLuaPre =
     let
@@ -29,6 +29,10 @@
   plugins = {
     nvim-jdtls = {
       enable = true;
+      cmd = [
+        (lib.getExe pkgs.jdt-language-server)
+        "--jvm-arg=-javaagent:/home/dogth/lombok.jar" # TODO: remove hard-coded path
+      ];
       configuration.__raw = ''vim.fn.stdpath 'cache' .. "/jdtls/config"'';
       data.__raw = "vim.fn.stdpath 'cache' .. '/jdtls/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')";
       initOptions = {
