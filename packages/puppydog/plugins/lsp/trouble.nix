@@ -4,13 +4,12 @@
       enable = true;
       settings = {
         auto_close = true;
-
         modes = {
           preview_split = {
             mode = "diagnostics";
             preview = {
               type = "split";
-              relative = "win";
+              relative = "editor";
               position = "center";
               size = 0.5;
             };

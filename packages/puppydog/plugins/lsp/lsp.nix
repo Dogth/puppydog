@@ -33,7 +33,10 @@
           filetypes = [ "nix" ];
         };
         jdt-language-server = {
-          enable = true;
+          enable = false;
+          extraOptions = {
+            "-data" = "./jdtls/";
+          };
           filetypes = [ "java" ];
         };
       };
