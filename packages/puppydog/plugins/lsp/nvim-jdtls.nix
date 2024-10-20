@@ -1,30 +1,5 @@
 { lib, pkgs, ... }:
 {
-  extraConfigLuaPre =
-    let
-      java-debug = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server";
-      java-test = "${pkgs.vscode-extensions.vscjava.vscode-java-test}/share/vscode/extensions/vscjava.vscode-java-test/server";
-    in
-    ''
-      local jdtls = require("jdtls")
-      local jdtls_dap = require("jdtls.dap")
-      local jdtls_setup = require("jdtls.setup")
-
-      _M.jdtls = {}
-      _M.jdtls.bundles = {}
-
-      local java_debug_bundle = vim.split(vim.fn.glob("${java-debug}" .. "/*.jar"), "\n")
-      local java_test_bundle = vim.split(vim.fn.glob("${java-test}" .. "/*.jar", true), "\n")
-
-      -- add jars to the bundle list if there are any
-      if java_debug_bundle[1] ~= "" then
-          vim.list_extend(_M.jdtls.bundles, java_debug_bundle)
-      end
-
-      if java_test_bundle[1] ~= "" then
-          vim.list_extend(_M.jdtls.bundles, java_test_bundle)
-      end
-    '';
 
   plugins = {
     nvim-jdtls = {
@@ -32,12 +7,11 @@
       cmd = [
         (lib.getExe pkgs.jdt-language-server)
         "--jvm-arg=-javaagent:/home/dogth/lombok.jar" # TODO: remove hard-coded path
+        "-data"
+        "/home/dogth/jdtls/cache/"
+        "-configuration"
+        "/home/dogth/jdtls/configuration"
       ];
-      configuration.__raw = ''vim.fn.stdpath 'cache' .. "/jdtls/config"'';
-      data.__raw = "vim.fn.stdpath 'cache' .. '/jdtls/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')";
-      initOptions = {
-        bundles.__raw = "_M.jdtls.bundles";
-      };
       settings = {
         java = {
           configuration = {
