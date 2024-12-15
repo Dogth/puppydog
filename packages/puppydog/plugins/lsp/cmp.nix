@@ -33,10 +33,6 @@
             priority = 500;
           }
           {
-            name = "codeium";
-            priority = 300;
-          }
-          {
             name = "treesitter";
             priority = 850;
           }
