@@ -6,7 +6,7 @@
       enable = true;
       cmd = [
         (lib.getExe pkgs.jdt-language-server)
-        "--jvm-arg=-javaagent:/home/dogth/lombok.jar" # TODO: remove hard-coded path
+        "--jvm-arg=-javaagent:/Users/dogth/lombok.jar" # TODO: remove hard-coded path
         "-data"
         "/home/dogth/jdtls/cache/"
         "-configuration"
