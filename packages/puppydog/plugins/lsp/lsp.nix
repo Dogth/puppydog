@@ -17,6 +17,10 @@
           enable = true;
           filetypes = [ "lua" ];
         };
+        ltex = {
+          enable = true;
+          filetypes = [ "tex" ];
+        };
         jsonls = {
           enable = true;
           filetypes = [ "json" ];
