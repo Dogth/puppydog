@@ -1,9 +1,10 @@
 { lib, pkgs, ... }:
 {
+  #TODO: replace with nvim-java plugin
 
   plugins = {
     nvim-jdtls = {
-      enable = true;
+      enable = false;
       cmd = [
         (lib.getExe pkgs.jdt-language-server)
         "--jvm-arg=-javaagent:/Users/dogth/.jdtls/lombok.jar" # TODO: remove hard-coded path

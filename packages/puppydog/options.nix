@@ -6,7 +6,7 @@
     opts = {
       mouse = "a";
 
-      spell = true;
+      spell = false;
 
       number = true;
       relativenumber = true;
