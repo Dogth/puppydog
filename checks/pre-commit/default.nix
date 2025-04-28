@@ -4,8 +4,8 @@ let
 in
 pre-commit-hooks.lib.${pkgs.system}.run {
   src = ./.;
-  hooks = {
 
+  hooks = {
     deadnix = {
       enable = true;
       settings.edit = true;

@@ -18,10 +18,10 @@
               action = "<NOP>";
             };
             "<C-j>" = {
-              action = "<cmd>resize -3<CR>";
+              action = "<cmd>resize +3<CR>";
             };
             "<C-k>" = {
-              action = "<cmd>resize +3<CR>";
+              action = "<cmd>resize -3<CR>";
             };
             "<C-h>" = {
               action = "<cmd>vertical resize -3<CR>";
