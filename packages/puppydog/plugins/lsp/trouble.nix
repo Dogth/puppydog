@@ -4,27 +4,6 @@
       enable = true;
       settings = {
         auto_close = true;
-        modes = {
-          preview_split = {
-            mode = "diagnostics";
-            preview = {
-              type = "split";
-              relative = "editor";
-              position = "center";
-              size = 0.5;
-            };
-          };
-
-          preview_float = {
-            mode = "diagnostics";
-            preview = {
-              type = "float";
-              relative = "editor";
-              title = "Preview";
-              title_pos = "center";
-            };
-          };
-        };
       };
     };
 
@@ -38,11 +17,6 @@
   };
 
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>tq";
-      action = "+diagnostics/quickfix";
-    }
     {
       mode = "n";
       key = "<leader>tl";
@@ -64,7 +38,7 @@
     {
       mode = "n";
       key = "<leader>td";
-      action = "<cmd>Trouble preview_split toggle<CR>";
+      action = "<cmd>Trouble diagnostics toggle<CR>";
       options = {
         desc = "Toggle diagnostics";
         silent = true;
@@ -73,7 +47,7 @@
     {
       mode = "n";
       key = "<leader>tD";
-      action = "<cmd>Trouble preview_split toggle filter.buf=0<CR>";
+      action = "<cmd>Trouble diagnostics toggle filter.buf=0<CR>";
       options = {
         desc = "Toggle buffer diagnostics";
         silent = true;
@@ -81,7 +55,7 @@
     }
     {
       mode = "n";
-      key = "<leader>tl";
+      key = "<leader>tL";
       action = "<cmd>Trouble lsp toggle<CR>";
       options = {
         desc = "Toggle LSP definitions";

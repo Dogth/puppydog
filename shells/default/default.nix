@@ -17,6 +17,6 @@ mkShell {
 
   shellHook = ''
     ${inputs.self.checks.${system}.pre-commit.shellHook}
-    echo Woof! :3
+    echo :3
   '';
 }

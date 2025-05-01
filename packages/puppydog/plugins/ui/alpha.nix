@@ -8,6 +8,7 @@
           type = "padding";
           val = size;
         };
+
         mkText = text: {
           type = "text";
           val = text;
@@ -16,6 +17,7 @@
             hl = "Type";
           };
         };
+
         mkButton = title: key: action: cmdKey: cmdAction: {
           type = "button";
           val = title;

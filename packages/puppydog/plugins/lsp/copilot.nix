@@ -1,28 +1,28 @@
-{ config, lib, ... }:
 {
   plugins = {
     copilot-lua = {
       enable = true;
-      panel.enabled = false;
-      suggestion.enabled = false;
+      settings = {
+        panel.enabled = false;
+        suggestion.enabled = false;
+      };
     };
 
     copilot-chat = {
       enable = true;
 
       settings = {
-        # NOTE: if you want float
-        # window = {
-        #   layout = "float";
-        #   relative = "cursor";
-        #   width = 1;
-        #   height = 0.5;
-        #   row = 1;
-        # };
+        window = {
+          layout = "float";
+          relative = "cursor";
+          width = 1;
+          height = 0.5;
+          row = 1;
+        };
       };
     };
 
-    which-key.settings.spec = lib.optionals config.plugins.copilot-chat.enable [
+    which-key.settings.spec = [
       {
         __unkeyed = "<leader>a";
         group = "Copilot";
@@ -31,7 +31,7 @@
     ];
   };
 
-  keymaps = lib.mkIf config.plugins.copilot-chat.enable [
+  keymaps = [
     {
       mode = "n";
       key = "<leader>ac";

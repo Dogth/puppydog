@@ -1,7 +1,9 @@
 {
   plugins = {
+
     lspkind.enable = true;
     lsp-lines.enable = true;
+
     lsp = {
       enable = true;
 
@@ -13,9 +15,13 @@
             "cpp"
           ];
         };
-        lua-ls = {
+        lua_ls = {
           enable = true;
           filetypes = [ "lua" ];
+        };
+        ltex = {
+          enable = true;
+          filetypes = [ "tex" ];
         };
         jsonls = {
           enable = true;
@@ -25,14 +31,14 @@
           enable = true;
           filetypes = [ "md" ];
         };
-        nil-ls = {
+        nil_ls = {
           enable = true;
           settings = {
             nix.flake.autoArchive = true;
           };
           filetypes = [ "nix" ];
         };
-        jdt-language-server = {
+        jdtls = {
           enable = false;
           extraOptions = {
             "-data" = "./jdtls/";
