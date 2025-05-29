@@ -12,6 +12,10 @@
       enable = true;
     };
 
+    dap-lldb = {
+      enable = true;
+    };
+
     which-key.settings.spec = [
       {
         __unkeyed = "<leader>d";
