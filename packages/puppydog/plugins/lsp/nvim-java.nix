@@ -1,6 +1,6 @@
 {
   plugins.java = {
-    enable = true;
+    enable = false;
     settings.root_markers = [
       "settings.gradle"
       "settings.gradle.kts"

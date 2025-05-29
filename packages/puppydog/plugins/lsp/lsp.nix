@@ -1,11 +1,12 @@
+{ lib, pkgs, ... }:
 {
   plugins = {
-
-    lspkind.enable = true;
-    lsp-lines.enable = true;
-
+    lsp-lines = {
+      enable = true;
+    };
     lsp = {
       enable = true;
+      inlayHints = true;
 
       servers = {
         clangd = {
@@ -14,14 +15,29 @@
             "c"
             "cpp"
           ];
+          settings = {
+            settings.init_options = {
+              usePlaceholders = true;
+              completeUnimported = true;
+              clangdFileStatus = true;
+            };
+            cmd = [
+              "${lib.getExe' pkgs.clang-tools "clangd"}"
+              "--background-index"
+              "--clang-tidy"
+              "--header-insertion=iwyu"
+              "--completion-style=detailed"
+              "--function-arg-placeholders"
+              "--fallback-style=llvm"
+            ];
+          };
+        };
+        cmake = {
+          enable = true;
         };
         lua_ls = {
           enable = true;
           filetypes = [ "lua" ];
-        };
-        ltex = {
-          enable = true;
-          filetypes = [ "tex" ];
         };
         jsonls = {
           enable = true;
@@ -38,83 +54,7 @@
           };
           filetypes = [ "nix" ];
         };
-        jdtls = {
-          enable = false;
-          extraOptions = {
-            "-data" = "./jdtls/";
-          };
-          filetypes = [ "java" ];
-        };
-      };
-
-      keymaps = {
-        diagnostic = {
-          "<leader>lp" = "goto_prev";
-          "<leader>ln" = "goto_next";
-          "<leader>lH" = "open_float";
-        };
-        lspBuf = {
-          "<leader>la" = "code_action";
-          "<leader>ld" = "definition";
-          "<leader>lf" = "format";
-          "<leader>lR" = "references";
-          "<leader>lt" = "type_definition";
-          "<leader>li" = "implementation";
-          "<leader>lh" = "hover";
-          "<leader>lr" = "rename";
-        };
       };
     };
-
-    which-key.settings.spec = [
-      {
-        __unkeyed = "<leader>l";
-        group = "LSP";
-      }
-      {
-        __unkeyed = "<leader>la";
-        group = "Code action";
-      }
-      {
-        __unkeyed = "<leader>ld";
-        group = "Definition";
-      }
-      {
-        __unkeyed = "<leader>lf";
-        group = "Format";
-      }
-      {
-        __unkeyed = "<leader>lR";
-        group = "References";
-      }
-      {
-        __unkeyed = "<leader>lt";
-        group = "Type definition";
-      }
-      {
-        __unkeyed = "<leader>li";
-        group = "Implementation";
-      }
-      {
-        __unkeyed = "<leader>lh";
-        group = "Hover";
-      }
-      {
-        __unkeyed = "<leader>ln";
-        group = "Diagnostic next";
-      }
-      {
-        __unkeyed = "<leader>lp";
-        group = "Diagnostic prev";
-      }
-      {
-        __unkeyed = "<leader>lH";
-        group = "Diagnostic hover";
-      }
-      {
-        __unkeyed = "<leader>lr";
-        group = "Rename";
-      }
-    ];
   };
 }
