@@ -110,7 +110,7 @@
 
     {
       mode = "n";
-      key = "<leader>ld";
+      key = "<leader>lh";
       action = "<cmd>Lspsaga hover_doc<CR>";
       options = {
         desc = "Hover";
