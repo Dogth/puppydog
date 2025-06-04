@@ -1,7 +1,83 @@
+{ lib, pkgs, ... }:
 {
+  extraPackages = with pkgs; [
+    coreutils
+    lldb_18
+  ];
   plugins = {
     dap = {
       enable = true;
+
+      adapters = {
+        executables = {
+          cppdbg = {
+            command = "gdb";
+            args = [
+              "-i"
+              "dap"
+            ];
+          };
+
+          gdb = {
+            command = "gdb";
+            args = [
+              "-i"
+              "dap"
+            ];
+          };
+
+          lldb = {
+            command = lib.getExe' pkgs.lldb "lldb-dap";
+          };
+        };
+
+        servers = {
+          codelldb = {
+            port = 13000;
+            executable = {
+              command = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+              args = [
+                "--port"
+                "13000"
+              ];
+            };
+          };
+        };
+      };
+      configurations =
+        let
+          program.__raw = ''
+            function()
+                return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
+            end
+          '';
+
+          codelldb-config = {
+            inherit program;
+            name = "Launch (CodeLLDB)";
+            type = "codelldb";
+            request = "launch";
+            cwd = ''''${workspaceFolder}'';
+            stopOnEntry = false;
+          };
+
+          lldb-config = {
+            inherit program;
+            name = "Launch (LLDB)";
+            type = "lldb";
+            request = "launch";
+            cwd = ''''${workspaceFolder}'';
+            stopOnEntry = false;
+          };
+        in
+        {
+          c = [ lldb-config ];
+
+          cpp = [
+            codelldb-config
+            lldb-config
+          ];
+        };
     };
 
     dap-ui = {
