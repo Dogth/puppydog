@@ -26,7 +26,6 @@
         xml = [ "xmlformat" ];
         "_" = [
           "trim_newlines"
-          "trim_whitespaces"
         ];
       };
 
@@ -59,7 +58,7 @@
           command = lib.getExe pkgs.cmake-format;
         };
         clang-format = {
-          command = lib.getExe pkgs.libclang;
+          command = "clang-format";
         };
       };
     };
