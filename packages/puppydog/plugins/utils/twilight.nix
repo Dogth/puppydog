@@ -7,7 +7,7 @@
     {
       mode = "n";
       key = "<leader>uT";
-      action = "<cmd>twilight<CR>";
+      action = "<cmd>Twilight<CR>";
       options = {
         desc = "Toggle Twilight";
       };

@@ -9,10 +9,26 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>T";
+      key = "<leader>Tf";
       action = "<cmd>ToggleTerm<CR>";
       options = {
-        desc = "Open terminal";
+        desc = "Open terminal (float)";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>Tv";
+      action = "<cmd>ToggleTerm direction=vertical<CR>";
+      options = {
+        desc = "Open terminal (vertically)";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>Th";
+      action = "<cmd>ToggleTerm direction=horizontal<CR>";
+      options = {
+        desc = "Open terminal (horizontally)";
       };
     }
   ];
