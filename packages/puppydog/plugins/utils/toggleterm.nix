@@ -18,7 +18,7 @@
     {
       mode = "n";
       key = "<leader>Tv";
-      action = "<cmd>ToggleTerm dir=vertical<CR>";
+      action = "<cmd>ToggleTerm direction=vertical<CR>";
       options = {
         desc = "Open terminal (vertically)";
       };
@@ -26,7 +26,7 @@
     {
       mode = "n";
       key = "<leader>Th";
-      action = "<cmd>ToggleTerm dir=horizontal<CR>";
+      action = "<cmd>ToggleTerm direction=horizontal<CR>";
       options = {
         desc = "Open terminal (horizontally)";
       };
