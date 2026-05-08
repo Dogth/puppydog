@@ -39,6 +39,11 @@
           enable = true;
           filetypes = [ "lua" ];
         };
+        pylsp = {
+          enable = true;
+          filetypes = [ "python" ];
+        }
+
         jsonls = {
           enable = true;
           filetypes = [ "json" ];
