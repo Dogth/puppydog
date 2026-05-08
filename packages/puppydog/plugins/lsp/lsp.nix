@@ -42,7 +42,7 @@
         pylsp = {
           enable = true;
           filetypes = [ "python" ];
-        }
+        };
 
         jsonls = {
           enable = true;
